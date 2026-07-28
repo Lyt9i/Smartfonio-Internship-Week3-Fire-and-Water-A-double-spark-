@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tilePrefab: {fileID: 1711634464861698073, guid: 06caeb8dc606adc4587f2d3c216e84d4, type: 3}
-  _speed: 3
+  _speed: 5
   _maxCount: 10
   _tiles:
   - {fileID: 0}
