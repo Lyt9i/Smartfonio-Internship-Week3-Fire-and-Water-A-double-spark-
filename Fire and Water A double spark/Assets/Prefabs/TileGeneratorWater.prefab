@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7254088684412486777}
-  - component: {fileID: 7509573425213742393}
   - component: {fileID: 1269823131893852847}
   - component: {fileID: 1965803695334939642}
+  - component: {fileID: 1974357270170953921}
   m_Layer: 0
   m_Name: TileGeneratorWater
   m_TagString: Untagged
@@ -34,23 +34,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7509573425213742393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7264855366189897391}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dd845e9a4c655746bd43d7781b6b130, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _tilePrefab: {fileID: 0}
-  _speed: 3
-  _maxTiles: 10
-  _tiles:
-  - {fileID: 0}
 --- !u!65 &1269823131893852847
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -94,8 +77,29 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1974357270170953921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7264855366189897391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dd845e9a4c655746bd43d7781b6b130, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tilePrefab: {fileID: 1711634464861698073, guid: 06caeb8dc606adc4587f2d3c216e84d4, type: 3}
+  _speed: 3
+  _maxCount: 10
+  _tiles:
+  - {fileID: 0}
+  _tileHolder: {fileID: 0}
+  _coin: {fileID: 3462116540512158846, guid: 35d48d1020112a143b0948293f15f585, type: 3}
+  _bomb: {fileID: 2657172351402570495, guid: a687226662851bf47af046f2fa7a2d8d, type: 3}
+  _startSpawnBomb: 1
