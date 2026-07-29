@@ -593,6 +593,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1881452776}
     - target: {fileID: 7488210006174290566, guid: d153a34ad7bf8d04493262104ec9a66c, type: 3}
+      propertyPath: _tileLength
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7488210006174290566, guid: d153a34ad7bf8d04493262104ec9a66c, type: 3}
       propertyPath: '_tiles.Array.data[0]'
       value: 
       objectReference: {fileID: 575265741}
@@ -809,6 +813,14 @@ PrefabInstance:
       propertyPath: _tileHolder
       value: 
       objectReference: {fileID: 1881452776}
+    - target: {fileID: 1974357270170953921, guid: e9cd819fb5d18464cb662c75fecf3cad, type: 3}
+      propertyPath: _tileLength
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974357270170953921, guid: e9cd819fb5d18464cb662c75fecf3cad, type: 3}
+      propertyPath: _startSpawnBomb
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1974357270170953921, guid: e9cd819fb5d18464cb662c75fecf3cad, type: 3}
       propertyPath: '_tiles.Array.data[0]'
       value: 

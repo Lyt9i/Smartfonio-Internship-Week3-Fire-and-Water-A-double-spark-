@@ -14,17 +14,31 @@ public class TileGenerator : MonoBehaviour
     [SerializeField] private GameObject _coin;
     [SerializeField] private GameObject _bomb;
     [SerializeField] private float _startSpawnBomb = 3;
+    [SerializeField] private float _tileLength = 0;
 
     private float _timer;
     private bool _isEnabling = true;
 
     void Start()
     {
+        if (_tileLength <= 0f)
+        {
+            Renderer rend = _tilePrefab.GetComponentInChildren<Renderer>();
+            if (rend != null)
+            {
+                _tileLength = rend.bounds.size.z;
+            }
+            else
+            {
+                Debug.LogWarning("[TileGenerator] Не удалось определить длину тайла автоматически.", this);
+            }
+        }
         _tiles.First().SetSpeed(_speed);
         for (int i = 0; i < _maxCount; i++)
         {
             GenerateTile();
         }
+  
     }
 
     void Update()
@@ -52,7 +66,8 @@ public class TileGenerator : MonoBehaviour
 
     private void GenerateTile()
     {
-        GameObject newTileObject = Instantiate(_tilePrefab, _tiles.Last().transform.position + Vector3.forward * _tilePrefab.transform.localScale.z, Quaternion.identity);
+        Vector3 spawnPosition = _tiles.Last().transform.position + Vector3.forward * _tileLength;
+        GameObject newTileObject = Instantiate(_tilePrefab, spawnPosition, Quaternion.identity);
         Tile newTile = newTileObject.GetComponent<Tile>();
         newTile.Initialize(_coin, _bomb, _startSpawnBomb, _timer);
         newTile.SetSpeed(_speed);
