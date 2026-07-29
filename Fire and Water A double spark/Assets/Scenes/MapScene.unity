@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 1376009c77f1a7748bfcad35351c2e49, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -338,7 +338,7 @@ Transform:
   m_GameObject: {fileID: 1061730111}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.74, z: 1.22}
+  m_LocalPosition: {x: 0, y: -0.7, z: 1.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -371,7 +371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3738392414585166008, guid: d153a34ad7bf8d04493262104ec9a66c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.74
+      value: -10.56
       objectReference: {fileID: 0}
     - target: {fileID: 3738392414585166008, guid: d153a34ad7bf8d04493262104ec9a66c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -407,7 +407,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7488210006174290566, guid: d153a34ad7bf8d04493262104ec9a66c, type: 3}
       propertyPath: _maxCount
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7488210006174290566, guid: d153a34ad7bf8d04493262104ec9a66c, type: 3}
       propertyPath: _tileHolder
@@ -591,13 +591,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1949865853}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.19733042, y: -0.20614468, z: 0.049147338, w: 0.9571571}
+  m_LocalRotation: {x: 0.14644156, y: -0.2084551, z: 0.038178004, w: 0.96625245}
   m_LocalPosition: {x: -0.36, y: 3.41, z: -0.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1061730112}
-  m_LocalEulerAnglesHint: {x: 23.454, y: -24.143, z: 0.795}
+  m_LocalEulerAnglesHint: {x: 17.393, y: -24.231, z: 0.764}
 --- !u!1001 &2105100179
 PrefabInstance:
   m_ObjectHideFlags: 0
