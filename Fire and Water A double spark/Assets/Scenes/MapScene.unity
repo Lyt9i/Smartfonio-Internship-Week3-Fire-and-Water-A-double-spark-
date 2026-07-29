@@ -384,6 +384,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TileGenerator
       objectReference: {fileID: 0}
+    - target: {fileID: 2313990030937122845, guid: d153a34ad7bf8d04493262104ec9a66c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3738392414585166008, guid: d153a34ad7bf8d04493262104ec9a66c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
