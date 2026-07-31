@@ -221,6 +221,35 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &89869322 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2313990030937122845, guid: d153a34ad7bf8d04493262104ec9a66c, type: 3}
+  m_PrefabInstance: {fileID: 1332403961}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &89869323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89869322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dd845e9a4c655746bd43d7781b6b130, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tilePrefab: {fileID: 3678868627780433304, guid: f5d5ec2fb06eb7d4bbf5c36778032b08, type: 3}
+  _speed: 5
+  _maxCount: 8
+  _tiles:
+  - {fileID: 1372411328}
+  _tileHolder: {fileID: 1943329869}
+  _fireCoin: {fileID: 3462116540512158846, guid: 35d48d1020112a143b0948293f15f585, type: 3}
+  _fireBomb: {fileID: 2657172351402570495, guid: a687226662851bf47af046f2fa7a2d8d, type: 3}
+  _waterCoin: {fileID: 3462116540512158846, guid: 35d48d1020112a143b0948293f15f585, type: 3}
+  _waterBomb: {fileID: 2657172351402570495, guid: a687226662851bf47af046f2fa7a2d8d, type: 3}
+  _startSpawnBomb: 3
+  _tileLength: 3.6
 --- !u!1 &481571689
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,17 +606,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!114 &832678751 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 758176499335310906, guid: f5d5ec2fb06eb7d4bbf5c36778032b08, type: 3}
-  m_PrefabInstance: {fileID: 1711069076991235145}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9f27667437a1f04d8f6cbc9412bed35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1061730111
 GameObject:
   m_ObjectHideFlags: 0
@@ -835,12 +853,27 @@ PrefabInstance:
     - target: {fileID: 7488210006174290566, guid: d153a34ad7bf8d04493262104ec9a66c, type: 3}
       propertyPath: '_tiles.Array.data[0]'
       value: 
-      objectReference: {fileID: 832678751}
-    m_RemovedComponents: []
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7488210006174290566, guid: d153a34ad7bf8d04493262104ec9a66c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2313990030937122845, guid: d153a34ad7bf8d04493262104ec9a66c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 89869323}
   m_SourcePrefab: {fileID: 100100000, guid: d153a34ad7bf8d04493262104ec9a66c, type: 3}
+--- !u!114 &1372411328 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5576388315264790019, guid: f5d5ec2fb06eb7d4bbf5c36778032b08, type: 3}
+  m_PrefabInstance: {fileID: 1711069076991235145}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9f27667437a1f04d8f6cbc9412bed35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1433219284
 GameObject:
   m_ObjectHideFlags: 0

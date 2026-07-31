@@ -417,7 +417,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7418196042447961332}
-  - component: {fileID: 758176499335310906}
+  - component: {fileID: 5576388315264790019}
   - component: {fileID: 6100441531611788859}
   m_Layer: 0
   m_Name: Gras
@@ -446,7 +446,7 @@ Transform:
   - {fileID: 7671332191527293664}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &758176499335310906
+--- !u!114 &5576388315264790019
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -458,12 +458,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f27667437a1f04d8f6cbc9412bed35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _points:
+  _firePoints:
+  - {fileID: 5798346753419204267}
+  - {fileID: 1335398784677115114}
+  _waterPoints:
   - {fileID: 7462119570913464309}
   - {fileID: 7211103065189871960}
   - {fileID: 2081573962370927368}
-  - {fileID: 5798346753419204267}
-  - {fileID: 1335398784677115114}
 --- !u!65 &6100441531611788859
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -510,7 +511,7 @@ Transform:
   m_GameObject: {fileID: 4167731649321906890}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.593, y: 2.54, z: 1.65}
+  m_LocalPosition: {x: -3.593, y: 2.27, z: 1.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

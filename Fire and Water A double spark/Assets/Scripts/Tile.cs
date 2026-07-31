@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
-    [SerializeField] private List<Transform> _points = new List<Transform>();
-    
+    [Header("Точки спавна для зоны 1 (Огонь)")]
+    [SerializeField] private List<Transform> _firePoints = new List<Transform>();
+
+    [Header("Точки спавна для зоны 2 (Вода)")]
+    [SerializeField] private List<Transform> _waterPoints = new List<Transform>();
+
     private float _speed;
-    private GameObject _coin;
-    private GameObject _bomb;
+
+    private GameObject _fireCoin;
+    private GameObject _fireBomb;
+    private GameObject _waterCoin;
+    private GameObject _waterBomb;
+
     private float _startSpawnBomb;
     private float _timer;
     private bool _isMove = true;
@@ -16,16 +24,22 @@ public class Tile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (_coin == null || _bomb == null)
+        SpawnForZone(_firePoints, _fireCoin, _fireBomb);
+        SpawnForZone(_waterPoints, _waterCoin, _waterBomb);
+    }
+
+    private void SpawnForZone(List<Transform> points, GameObject coin, GameObject bomb)
+    {
+        if (coin == null || bomb == null || points.Count == 0)
         {
             return;
         }
 
-        int randomPoinIndex = Random.Range(0, _points.Count);
+        int randomPointIndex = Random.Range(0, points.Count);
 
         if (_timer < _startSpawnBomb)
         {
-            CreateObject(randomPoinIndex, _coin);
+            CreateObject(points[randomPointIndex], coin);
         }
         else
         {
@@ -34,18 +48,19 @@ public class Tile : MonoBehaviour
 
             if (Random.Range(0, 100) < chanceSpawnBomb)
             {
-                CreateObject(randomPoinIndex, _bomb);
+                CreateObject(points[randomPointIndex], bomb);
             }
             else
             {
-                CreateObject(randomPoinIndex, _coin);
+                CreateObject(points[randomPointIndex], coin);
             }
         }
     }
-    private void CreateObject(int randomPoinIndex, GameObject createdObject)
+
+    private void CreateObject(Transform point, GameObject createdObject)
     {
-        GameObject newCoin = Instantiate(createdObject, _points[randomPoinIndex].position, Quaternion.identity);
-        newCoin.transform.SetParent(transform);
+        GameObject newObject = Instantiate(createdObject, point.position, Quaternion.identity);
+        newObject.transform.SetParent(transform);
     }
 
     void FixedUpdate()
@@ -53,22 +68,24 @@ public class Tile : MonoBehaviour
         if (_isMove == false)
             return;
 
-        transform.Translate(Vector3.back *  _speed * Time.fixedDeltaTime);
+        transform.Translate(Vector3.back * _speed * Time.fixedDeltaTime);
     }
 
-    public void Initialize(GameObject coin, GameObject bomb, float startSpawnBomb, float timer)
+    public void Initialize(GameObject fireCoin, GameObject fireBomb, GameObject waterCoin, GameObject waterBomb, float startSpawnBomb, float timer)
     {
-        _coin = coin;
-        _bomb = bomb;
+        _fireCoin = fireCoin;
+        _fireBomb = fireBomb;
+        _waterCoin = waterCoin;
+        _waterBomb = waterBomb;
         _timer = timer;
         _startSpawnBomb = startSpawnBomb;
     }
 
     public void SetSpeed(float speed)
     {
-        if(speed < 0)
+        if (speed < 0)
         {
-            Debug.LogError("Ñêîðîñòü äëÿ òàéëà íèæå 0");
+            Debug.LogError("Скорость для тайла ниже 0");
             return;
         }
 
