@@ -1,10 +1,5 @@
 using UnityEngine;
 
-/// <summary>
-/// Вода — стоит примерно на одном месте по оси Z (мир/платформы движутся
-/// навстречу под ней отдельным скриптом). Персонаж отвечает только за
-/// горизонтальное перемещение: смену трёх полос влево/вправо.
-/// </summary>
 [RequireComponent(typeof(CharacterController))]
 public class WaterController : MonoBehaviour
 {
@@ -22,7 +17,6 @@ public class WaterController : MonoBehaviour
     private CharacterController controller;
     private Vector3 velocity;
 
-    // 0 = левая полоса, 1 = центр, 2 = правая полоса
     private int currentLane = 1;
     private const int minLane = 0;
     private const int maxLane = 2;
@@ -52,12 +46,24 @@ public class WaterController : MonoBehaviour
     {
         if (Input.GetKeyDown(leftKey))
         {
-            currentLane = Mathf.Max(minLane, currentLane - 1);
+            MoveLeft();
         }
         else if (Input.GetKeyDown(rightKey))
         {
-            currentLane = Mathf.Min(maxLane, currentLane + 1);
+            MoveRight();
         }
+    }
+
+
+    public void MoveLeft()
+    {
+        currentLane = Mathf.Max(minLane, currentLane - 1);
+    }
+
+
+    public void MoveRight()
+    {
+        currentLane = Mathf.Min(maxLane, currentLane + 1);
     }
 
     private void ApplyGravity()

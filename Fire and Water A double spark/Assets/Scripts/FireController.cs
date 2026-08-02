@@ -1,10 +1,5 @@
 using UnityEngine;
 
-/// <summary>
-/// Огонь — стоит примерно на одном месте по оси Z (мир/платформы движутся
-/// навстречу под ним отдельным скриптом). Персонаж отвечает только за
-/// вертикальное перемещение: прыжок вверх и приседание/наклон вниз.
-/// </summary>
 [RequireComponent(typeof(CharacterController))]
 public class FireController : MonoBehaviour
 {
@@ -47,14 +42,14 @@ public class FireController : MonoBehaviour
 
     private void HandleInput()
     {
-        if (Input.GetKeyDown(jumpKey) && controller.isGrounded && !isDucking)
+        if (Input.GetKeyDown(jumpKey))
         {
-            velocity.y = jumpForce;
+            Jump();
         }
 
-        if (Input.GetKeyDown(duckKey) && controller.isGrounded && !isDucking)
+        if (Input.GetKeyDown(duckKey))
         {
-            StartDuck();
+            Duck();
         }
 
         if (isDucking)
@@ -64,6 +59,22 @@ public class FireController : MonoBehaviour
             {
                 EndDuck();
             }
+        }
+    }
+
+    public void Jump()
+    {
+        if (controller.isGrounded && !isDucking)
+        {
+            velocity.y = jumpForce;
+        }
+    }
+
+    public void Duck()
+    {
+        if (controller.isGrounded && !isDucking)
+        {
+            StartDuck();
         }
     }
 
