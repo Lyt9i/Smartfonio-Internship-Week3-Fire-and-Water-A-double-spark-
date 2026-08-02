@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     [SerializeField] private TMP_Text _fireScore;
     [SerializeField] private TMP_Text _waterScore;
+    [SerializeField] private GameObject mobileUI;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
     {
         _fireScore.text = "0";
         _waterScore.text = "0";
+        MobileUIManager();
 
     }
 
@@ -48,4 +50,28 @@ public class GameManager : MonoBehaviour
             _waterScore.text = currentScore.ToString();
         }
     }
+    public void GameFail()
+    {
+        
+    }
+    public void GameStop()
+    {
+        
+    }
+    public void GameStart()
+    {
+        
+    }
+    private void MobileUIManager()
+    {
+        if (Application.isMobilePlatform)
+        {
+            mobileUI.SetActive(true);
+        }
+        else
+        {
+            mobileUI.SetActive(false);
+        }
+    }
+
 }

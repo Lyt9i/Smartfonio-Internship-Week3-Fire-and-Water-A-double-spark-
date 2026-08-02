@@ -103,6 +103,6 @@ MonoBehaviour:
   _fireCoin: {fileID: 3462116540512158846, guid: 35d48d1020112a143b0948293f15f585, type: 3}
   _fireBomb: {fileID: 2657172351402570495, guid: a687226662851bf47af046f2fa7a2d8d, type: 3}
   _waterCoin: {fileID: 3462116540512158846, guid: d51a425705cdb8044ae5b0f6fe1584d4, type: 3}
-  _waterBomb: {fileID: 2657172351402570495, guid: a687226662851bf47af046f2fa7a2d8d, type: 3}
+  _waterBomb: {fileID: 1998710776551469450, guid: 944fcf2a31e549c44b8964c3e53ec21f, type: 3}
   _startSpawnBomb: 3
   _tileLength: 3.6
