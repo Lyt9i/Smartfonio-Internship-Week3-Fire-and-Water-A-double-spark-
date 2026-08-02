@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3738392414585166008}
   - component: {fileID: 5042839635606477617}
   - component: {fileID: 3917653042481460580}
-  - component: {fileID: 7488210006174290566}
+  - component: {fileID: 6231988004903614994}
   m_Layer: 0
   m_Name: TileGeneratorFire
   m_TagString: Untagged
@@ -82,7 +82,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7488210006174290566
+--- !u!114 &6231988004903614994
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,12 +94,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dd845e9a4c655746bd43d7781b6b130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tilePrefab: {fileID: 1711634464861698073, guid: 71d7664084a8fbc4a9c6c2350b60a0af, type: 3}
+  _tilePrefab: {fileID: 3678868627780433304, guid: f5d5ec2fb06eb7d4bbf5c36778032b08, type: 3}
   _speed: 5
-  _maxCount: 10
+  _maxCount: 8
   _tiles:
   - {fileID: 0}
   _tileHolder: {fileID: 0}
-  _coin: {fileID: 3462116540512158846, guid: 35d48d1020112a143b0948293f15f585, type: 3}
-  _bomb: {fileID: 2657172351402570495, guid: a687226662851bf47af046f2fa7a2d8d, type: 3}
-  _startSpawnBomb: 1
+  _fireCoin: {fileID: 3462116540512158846, guid: 35d48d1020112a143b0948293f15f585, type: 3}
+  _fireBomb: {fileID: 2657172351402570495, guid: a687226662851bf47af046f2fa7a2d8d, type: 3}
+  _waterCoin: {fileID: 3462116540512158846, guid: d51a425705cdb8044ae5b0f6fe1584d4, type: 3}
+  _waterBomb: {fileID: 2657172351402570495, guid: a687226662851bf47af046f2fa7a2d8d, type: 3}
+  _startSpawnBomb: 3
+  _tileLength: 3.6

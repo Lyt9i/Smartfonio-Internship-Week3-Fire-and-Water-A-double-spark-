@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4386081613921481141}
   - component: {fileID: 294930424352485382}
   m_Layer: 0
-  m_Name: Coin
+  m_Name: CoinFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: ffbe7a68e2ceffd4290ba7af4c02f720, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c8577be99e8b3e4dae8bcda40bdab48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _tag: 1
 --- !u!65 &294930424352485382
 BoxCollider:
   m_ObjectHideFlags: 0
