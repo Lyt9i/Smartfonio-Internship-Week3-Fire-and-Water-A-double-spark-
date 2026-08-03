@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro.EditorUtilities;
 
@@ -9,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TMP_Text _fireScore;
     [SerializeField] private TMP_Text _waterScore;
     [SerializeField] private GameObject mobileUI;
+    [SerializeField] private GameObject _gamePause;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
@@ -27,6 +29,7 @@ public class GameManager : MonoBehaviour
         _fireScore.text = "0";
         _waterScore.text = "0";
         MobileUIManager();
+        GameStart();
 
     }
 
@@ -56,11 +59,18 @@ public class GameManager : MonoBehaviour
     }
     public void GameStop()
     {
-        
+        Time.timeScale = 0f;
+        _gamePause.SetActive(true);
     }
     public void GameStart()
     {
-        
+        Time.timeScale = 1f;
+        _gamePause.SetActive(false);
+    }
+    public void GameRestart()
+    {
+        Scene currentScene = SceneManager.GetActiveScene(); 
+        SceneManager.LoadScene(currentScene.name); 
     }
     private void MobileUIManager()
     {
