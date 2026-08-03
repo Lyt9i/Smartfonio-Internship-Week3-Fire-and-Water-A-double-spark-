@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TMP_Text _waterScore;
     [SerializeField] private GameObject mobileUI;
     [SerializeField] private GameObject _gamePause;
+    [SerializeField] private Text _scoreText;
+    private int _score;
+    private float _timer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
@@ -36,7 +39,14 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        _timer += Time.deltaTime;
+    
+        if (_timer >= 0.5f)
+        {
+            _score += 1;
+            _scoreText.text = $"Счёт: {_score}";
+            _timer = 0f; 
+        }
     }
     public void UpdateScore(int tag)
     {

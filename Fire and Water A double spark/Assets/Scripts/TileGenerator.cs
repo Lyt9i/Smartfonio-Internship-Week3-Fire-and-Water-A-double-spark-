@@ -54,6 +54,7 @@ public class TileGenerator : MonoBehaviour
             return;
 
         _timer += Time.deltaTime;
+        _speed += Time.deltaTime * 0.01f;
 
         if (_tiles.Count < _maxCount)
         {
