@@ -72,6 +72,10 @@ public class GameManager : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene(); 
         SceneManager.LoadScene(currentScene.name); 
     }
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
     private void MobileUIManager()
     {
         if (Application.isMobilePlatform)
