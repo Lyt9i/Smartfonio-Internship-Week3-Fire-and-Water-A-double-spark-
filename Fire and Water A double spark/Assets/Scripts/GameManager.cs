@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _newScore;
     private int _score;
     private float _timer;
+    private bool _newScoreShown = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
@@ -122,10 +123,15 @@ public class GameManager : MonoBehaviour
     }
     private void NewScore()
     {
+        if (_newScoreShown) return;
+
         if (_score > PlayerPrefs.GetInt("TotalScore"))
         {
             _newScore.SetActive(true);
+            _newScoreShown = true;
         }
     }
+
+    
 
 }
