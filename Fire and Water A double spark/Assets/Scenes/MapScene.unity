@@ -2060,6 +2060,7 @@ GameObject:
   - component: {fileID: 1165581776}
   - component: {fileID: 1165581779}
   - component: {fileID: 1165581778}
+  - component: {fileID: 1165581780}
   - component: {fileID: 1165581777}
   m_Layer: 5
   m_Name: NewScore
@@ -2147,6 +2148,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1165581775}
   m_CullTransparentMesh: 1
+--- !u!114 &1165581780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165581775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef32ad51f23af184f928f6b193e9a568, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1195954336
 GameObject:
   m_ObjectHideFlags: 0
