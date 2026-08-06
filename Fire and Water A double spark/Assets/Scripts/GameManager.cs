@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject mobileUI;
     [SerializeField] private GameObject _gamePause;
     [SerializeField] private Text _scoreText;
+    [SerializeField] private GameObject _dieCanvas;
     private int _score;
     private float _timer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -96,6 +97,11 @@ public class GameManager : MonoBehaviour
         {
             mobileUI.SetActive(false);
         }
+    }
+    public void Die()
+    {
+        Time.timeScale = 0f;
+        _dieCanvas.SetActive(true);
     }
 
 }

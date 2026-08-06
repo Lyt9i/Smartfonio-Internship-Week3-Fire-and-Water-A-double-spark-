@@ -6,6 +6,7 @@ public class Bomb : MonoBehaviour
     {
         Destroy(gameObject);
         Debug.Log("Вы проиграли");
+        GameManager.Instance.Die();
     }
     
 }
