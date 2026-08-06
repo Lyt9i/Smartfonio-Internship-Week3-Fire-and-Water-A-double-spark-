@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _gamePause;
     [SerializeField] private Text _scoreText;
     [SerializeField] private GameObject _dieCanvas;
+    [SerializeField] private GameObject _newScore;
     private int _score;
     private float _timer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -40,8 +41,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         _timer += Time.deltaTime;
-    
+        NewScore();
+
         if (_timer >= 0.5f)
         {
             _score += 1;
@@ -86,6 +89,7 @@ public class GameManager : MonoBehaviour
     public void GoToMainMenu()
     {
         SceneManager.LoadScene(0);
+        SaveScore();
     }
     private void MobileUIManager()
     {
@@ -102,6 +106,26 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0f;
         _dieCanvas.SetActive(true);
+        SaveScore();
+    }
+    private void SaveScore()
+    {
+        int fireScore = PlayerPrefs.GetInt("FireScore") + int.Parse(_fireScore.text);
+        int waterScore = PlayerPrefs.GetInt("WaterScore") + int.Parse(_waterScore.text);
+        PlayerPrefs.SetInt("FireScore", fireScore);
+        PlayerPrefs.SetInt("WaterScore", waterScore);
+        if (_score > PlayerPrefs.GetInt("TotalScore"))
+        {
+            PlayerPrefs.SetInt("TotalScore", _score);
+        }
+        PlayerPrefs.Save();
+    }
+    private void NewScore()
+    {
+        if (_score > PlayerPrefs.GetInt("TotalScore"))
+        {
+            _newScore.SetActive(true);
+        }
     }
 
 }
