@@ -1,4 +1,4 @@
-
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEngine;
 
@@ -46,7 +46,6 @@ public static class SnapToGridSystem
                 t.position = pos;
             }
 
-            // Магнит к ближайшему соседу срабатывает при отпускании мыши
             if (e.type == EventType.MouseUp)
             {
                 TrySnapToNeighbor(t, snap);
@@ -60,7 +59,6 @@ public static class SnapToGridSystem
         float bestDist = NeighborSnapDistance;
         Transform bestNeighbor = null;
 
-        // Ищем ближайшего соседа в 3D (по всем осям, а не только по полу)
         foreach (SnapToGrid other in all)
         {
             if (other.transform == t) continue;
@@ -79,10 +77,6 @@ public static class SnapToGridSystem
         Vector3 delta = t.position - bestNeighbor.position;
         Vector3 snapped = bestNeighbor.position;
 
-        // Определяем, с какой стороны находится объект — по оси с наибольшим
-        // расстоянием (это и есть сторона, к которой он прилипает: X — бок,
-        // Y — верх/низ, Z — перед/зад). По остальным двум осям выравниваем
-        // объект строго вплотную к соседу, чтобы не было перекоса.
         float ax = Mathf.Abs(delta.x);
         float ay = Mathf.Abs(delta.y);
         float az = Mathf.Abs(delta.z);
@@ -107,3 +101,4 @@ public static class SnapToGridSystem
         }
     }
 }
+#endif

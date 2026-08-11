@@ -2,8 +2,6 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using TMPro.EditorUtilities;
-
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
@@ -67,10 +65,6 @@ public class GameManager : MonoBehaviour
             currentScore++;
             _waterScore.text = currentScore.ToString();
         }
-    }
-    public void GameFail()
-    {
-        
     }
     public void GameStop()
     {
